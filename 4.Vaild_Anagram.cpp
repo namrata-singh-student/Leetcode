@@ -5,7 +5,7 @@ public:
          sort(begin(s),end(s));
          sort(begin(t),end(t));
          return s==t;
-        
+        -------------------------------------------------------------------------
         //Optimized code---- 
          vector<int>count(26,0);
         for(char &ch :s){
@@ -20,6 +20,8 @@ public:
          return allZeros;
 
         //One more way---- o(n+m)
+
+        ------------------------------------------------------------------------------->>>>>>>>>>>>>>
         unordered_map<int,int>sc;
         unordered_map<int ,int>tc;
         for(auto &ch :s){
@@ -31,3 +33,20 @@ public:
         return sc == tc;
     }
 };
+----------------------------------------------------------------------------------------------------------
+    //Java Solution
+
+    class Solution {
+    public boolean isAnagram(String s, String t) {
+        int []count = new int[26];
+        for(char ch :s.toCharArray()){
+            count[ch-'a']++;
+        }
+        for(char ch :t.toCharArray()){
+            count[ch-'a']--;
+        }
+        //check if all element in an array are 0
+        boolean allzeros= Arrays.stream(count).allMatch(element -> element==0);
+        return allzeros;
+    }
+}
