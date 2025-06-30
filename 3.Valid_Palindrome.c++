@@ -52,3 +52,51 @@ public:
     return true;
   }
 };
+
+
+
+----------------------------------------------------
+
+//in java
+
+
+  package string;
+import java.util.*;
+public class ValidPalindrome {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the string to check:");
+		String str = sc.nextLine();
+		boolean isPalindrome = isValidPalindrome(str);
+		if(isPalindrome) {
+			System.out.println("Valid Palindrome");
+		}else {
+			System.out.println("Not a Valid Palindrome");
+		}
+		sc.close();
+	}
+//Character.isLetterOrDigit---- to check char is alphanumeric or not
+//Character.isLetterOrDigit---- to convert an uppercase letter to its lowercase equivalent
+//str.charAt(left))---Java strings do not allow direct array-style index access like str[left]. Instead, you need to use the .charAt(index) method.
+	public static 	boolean  isValidPalindrome(String str) {
+		int n = str.length();
+		int left= 0, right =n-1;
+		while(left<right) {
+			if(!Character.isLetterOrDigit(str.charAt(left))) {
+				left++;
+			}else if(!Character.isLetterOrDigit(str.charAt(right))) {
+				right--;
+			}else if(Character.toLowerCase(str.charAt(left))!=
+					Character.toLowerCase(str.charAt(right))) {
+				return false;
+			}else {
+				left++;
+                right--;
+			}
+		}
+		return true;
+	}
+
+}
