@@ -100,3 +100,35 @@ public class ValidPalindrome {
 	}
 
 }
+
+
+//Another way to write java code
+---------
+// s = s.toLowerCase().replaceAll("[^A-Za-z0-9]", "");--------------
+// s.toLowerCase():-------Converts the entire string to lowercase, ensuring that comparisons are case-insensitive.
+
+// For example: "Aba" becomes "aba".
+
+// s.replaceAll("[^A-Za-z0-9]", ""):
+
+// Uses a regular expression to remove all characters that are not alphanumeric (letters or numbers).
+
+// The pattern [^A-Za-z0-9] matches anything that is not a letter (A-Za-z) or a digit (0-9).
+
+// The replaceAll method replaces all such characters with an empty string.
+
+class Solution {
+    public boolean isPalindrome(String s) {
+        s = s.toLowerCase().replaceAll("[^A-Za-z0-9]", "");
+        int i =0;
+        int j = s.length()-1;
+        while(i<=j){
+            if(s.charAt(i)!=s.charAt(j)){
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+}
