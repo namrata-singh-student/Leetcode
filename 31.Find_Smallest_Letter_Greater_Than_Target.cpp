@@ -20,3 +20,10 @@ public:
         }
     }
 };
+//one more way by using c++ stl and TC for both is O(log n)
+        int n = letters.size();
+        int idx = upper_bound(letters.begin(),letters.end(),target) - letters.begin();
+        if(idx == n){
+            return letters[0];
+        }
+        return letters[idx];
