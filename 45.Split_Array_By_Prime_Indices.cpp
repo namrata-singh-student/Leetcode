@@ -55,16 +55,12 @@ public:
     }
     long long splitArray(vector<int>& nums) {
         if(nums.size() == 0 ) return 0;
-        vector<int>arr1;
-        vector<int>arr2;
         long long sum1 = 0;
         long long sum2 = 0;
         for(int i = 0; i<nums.size() ;i++){
             if(isPrime(i)){
-                // arr1.push_back(nums[i]);
                 sum1 += nums[i];
             }else{
-                //arr2.push_back(nums[i]);
                 sum2 += nums[i];
             }
         }
