@@ -33,5 +33,17 @@ public:
             freq[ch - 'a']--;
         }
         return true;
+//using hashmap
+     // unordered_map<int , int> mp;
+     //    for(char ch : magazine){
+     //        mp[ch]++;
+     //    }
+     //    for(auto c : ransomNote){
+     //        if(mp[c] == 0){
+     //            return false;
+     //        }
+     //        mp[c]--;
+     //    }
+     //    return true;
     }
 };
